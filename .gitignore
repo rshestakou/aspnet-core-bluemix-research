@@ -2,7 +2,7 @@
 # Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
 ################################################################################
 
-/src/AspNetCoreBluemixResearch.Web/bin/Debug/netcoreapp1.0
-/src/AspNetCoreBluemixResearch.Web/obj/Debug/netcoreapp1.0
+/src/AspNetCoreBluemixResearch.Web/bin
+/src/AspNetCoreBluemixResearch.Web/obj
 /.vs/AspNetCoreBluemixResearch/v14
 /.vs

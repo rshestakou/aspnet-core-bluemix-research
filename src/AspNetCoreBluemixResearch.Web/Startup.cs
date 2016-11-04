@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using AspNetCoreBluemixResearch.Web.Models;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -22,6 +24,11 @@ namespace AspNetCoreBluemixResearch.Web
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+      string connection = Configuration.GetConnectionString("DefaultConnection");
+
+      services.AddDbContext<MobileContext>(options =>
+                options.UseNpgsql(connection));
+
       // Add framework services.
       services.AddMvc();
     }
@@ -47,8 +54,8 @@ namespace AspNetCoreBluemixResearch.Web
       app.UseMvc(routes =>
       {
         routes.MapRoute(
-                  name: "default",
-                  template: "{controller=Home}/{action=Index}/{id?}");
+                name: "default",
+                template: "{controller=Home}/{action=Index}/{id?}");
       });
     }
   }
