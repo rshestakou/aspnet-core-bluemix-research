@@ -1,0 +1,24 @@
+﻿@model AspNetCoreBluemixResearch.Web.Models.Phone
+@{
+  ViewBag.Title = "Creating Phone";
+}
+
+<h2>Add new phone</h2>
+
+<form asp-action="create" asp-controller="home">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Company" class="control-label">Company</label>
+        <input type="text" asp-for="Company" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Price" class="control-label">Price</label>
+        <input type="number" asp-for="Price" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Send" class="btn btn-default" />
+    </div>
+</form>

@@ -1,6 +1,7 @@
 ﻿using AspNetCoreBluemixResearch.Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace AspNetCoreBluemixResearch.Web.Controllers
 {
@@ -13,9 +14,24 @@ namespace AspNetCoreBluemixResearch.Web.Controllers
       db = context;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-      return View(db.Phones.ToList());
+      return View(await db.Phones.ToListAsync());
+    }
+
+    public IActionResult Create()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(Phone phone)
+    {
+      db.Phones.Add(phone);
+
+      await db.SaveChangesAsync();
+
+      return RedirectToAction("Index");
     }
 
     [HttpGet]

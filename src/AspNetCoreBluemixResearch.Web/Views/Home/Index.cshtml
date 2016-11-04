@@ -1,22 +1,24 @@
 ﻿@model IEnumerable<AspNetCoreBluemixResearch.Web.Models.Phone>
 @{
-  ViewData["Title"] = "Phones Catalog";
+  ViewBag.Title = "Phones Catalog";
 }
 <h3>Phones</h3>
 <table class="table-condensed">
     <tr>
         <th>Model</th>
-        <th>Brand</th>
+        <th>Company</th>
         <th>Price</th>
         <th></th>
     </tr>
     @foreach (var phone in Model)
     {
-    <tr>
-        <td>@phone.Name</td>
-        <td>@phone.Company</td>
-        <td>@phone.Price</td>
-        <td><a href="~/Home/Buy/@phone.Id">Buy</a></td>
-    </tr>
+        <tr>
+            <td>@phone.Name</td>
+            <td>@phone.Company</td>
+            <td>@phone.Price</td>
+            <td><a href="~/Home/Buy/@phone.Id">Buy</a></td>
+        </tr>
     }
 </table>
+<br />
+<a href="~/Home/Create">Add phone</a>

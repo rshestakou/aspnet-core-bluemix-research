@@ -1,7 +1,12 @@
-﻿namespace AspNetCoreBluemixResearch.Web.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace AspNetCoreBluemixResearch.Web.Models
 {
   public class Order
   {
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int OrderId { get; set; }
     public string User { get; set; }
     public string Address { get; set; }

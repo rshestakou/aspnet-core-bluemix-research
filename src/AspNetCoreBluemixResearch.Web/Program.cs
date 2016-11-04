@@ -13,7 +13,6 @@ namespace AspNetCoreBluemixResearch.Web
 
       var host = new WebHostBuilder()
         .UseKestrel()
-        .UseIISIntegration()
         .UseConfiguration(config)
         .UseStartup<Startup>()
         .Build();

@@ -8,7 +8,7 @@ using AspNetCoreBluemixResearch.Web.Models;
 namespace AspNetCoreBluemixResearch.Web.Migrations
 {
     [DbContext(typeof(MobileContext))]
-    [Migration("20161104081951_Initial")]
+    [Migration("20161104134136_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
