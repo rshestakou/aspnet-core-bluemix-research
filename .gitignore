@@ -3,3 +3,6 @@
 ################################################################################
 
 /src/AspNetCoreBluemixResearch.Web/bin/Debug/netcoreapp1.0
+/src/AspNetCoreBluemixResearch.Web/obj/Debug/netcoreapp1.0
+/.vs/AspNetCoreBluemixResearch/v14
+/.vs
