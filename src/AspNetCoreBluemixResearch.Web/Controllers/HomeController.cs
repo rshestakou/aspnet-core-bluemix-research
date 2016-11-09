@@ -5,51 +5,51 @@ using System.Threading.Tasks;
 
 namespace AspNetCoreBluemixResearch.Web.Controllers
 {
-  public class HomeController : Controller
-  {
-    MobileContext db;
+	public class HomeController : Controller
+	{
+		private readonly MobileContext db;
 
-    public HomeController(MobileContext context)
-    {
-      db = context;
-    }
+		public HomeController(MobileContext context)
+		{
+			db = context;
+		}
 
-    public async Task<IActionResult> Index()
-    {
-      return View(await db.Phones.ToListAsync());
-    }
+		public async Task<IActionResult> Index()
+		{
+			return View(await db.Phones.ToListAsync());
+		}
 
-    public IActionResult Create()
-    {
-      return View();
-    }
+		public IActionResult Create()
+		{
+			return View();
+		}
 
-    [HttpPost]
-    public async Task<IActionResult> Create(Phone phone)
-    {
-      db.Phones.Add(phone);
+		[HttpPost]
+		public async Task<IActionResult> Create(Phone phone)
+		{
+			db.Phones.Add(phone);
 
-      await db.SaveChangesAsync();
+			await db.SaveChangesAsync();
 
-      return RedirectToAction("Index");
-    }
+			return RedirectToAction("Index");
+		}
 
-    [HttpGet]
-    public IActionResult Buy(int id)
-    {
-      ViewBag.PhoneId = id;
+		[HttpGet]
+		public IActionResult Buy(int id)
+		{
+			ViewBag.PhoneId = id;
 
-      return View();
-    }
+			return View();
+		}
 
-    [HttpPost]
-    public string Buy(Order order)
-    {
-      db.Orders.Add(order);
+		[HttpPost]
+		public string Buy(Order order)
+		{
+			db.Orders.Add(order);
 
-      db.SaveChanges();
+			db.SaveChanges();
 
-      return order.User + ", thank you for your purchase!";
-    }
-  }
+			return order.User + ", thank you for your purchase!";
+		}
+	}
 }

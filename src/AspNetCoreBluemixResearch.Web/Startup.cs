@@ -1,64 +1,64 @@
 ﻿using AspNetCoreBluemixResearch.Web.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MySQL.Data.EntityFrameworkCore.Extensions;
 
 namespace AspNetCoreBluemixResearch.Web
 {
-  public class Startup
-  {
-    public Startup(IHostingEnvironment env)
-    {
-      var builder = new ConfigurationBuilder()
-          .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-          .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-          .AddEnvironmentVariables();
-      Configuration = builder.Build();
-    }
+	public class Startup
+	{
+		public Startup(IHostingEnvironment env)
+		{
+			var builder = new ConfigurationBuilder()
+				.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+				.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+				.AddEnvironmentVariables();
+			Configuration = builder.Build();
+		}
 
-    public IConfigurationRoot Configuration { get; }
+		public IConfigurationRoot Configuration { get; }
 
-    // This method gets called by the runtime. Use this method to add services to the container.
-    public void ConfigureServices(IServiceCollection services)
-    {
-      string connection = Configuration.GetConnectionString("DefaultConnection");
+		// This method gets called by the runtime. Use this method to add services to the container.
+		public void ConfigureServices(IServiceCollection services)
+		{
+			string connection = Configuration.GetConnectionString("MySQLConnection");
 
-      services.AddDbContext<MobileContext>(options =>
-                options.UseNpgsql(connection));
+			services.AddDbContext<MobileContext>(options =>
+				options.UseMySQL(connection));
 
-      // Add framework services.
-      services.AddMvc();
-    }
+			// Add framework services.
+			services.AddMvc();
+		}
 
-    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
-    {
-      loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-      loggerFactory.AddDebug();
+		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+		public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+		{
+			loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+			loggerFactory.AddDebug();
 
-      if (env.IsDevelopment())
-      {
-        app.UseDeveloperExceptionPage();
-        app.UseBrowserLink();
-      }
-      else
-      {
-        app.UseExceptionHandler("/Home/Error");
-      }
+			if (env.IsDevelopment())
+			{
+				app.UseDeveloperExceptionPage();
+				app.UseBrowserLink();
+			}
+			else
+			{
+				app.UseExceptionHandler("/Home/Error");
+			}
 
-      app.UseStaticFiles();
+			app.UseStaticFiles();
 
-      app.UseMvc(routes =>
-      {
-        routes.MapRoute(
-                name: "default",
-                template: "{controller=Home}/{action=Index}/{id?}");
-      });
+			app.UseMvc(routes =>
+			{
+				routes.MapRoute(
+					name: "default",
+					template: "{controller=Home}/{action=Index}/{id?}");
+			});
 
-      SampleData.Initialize(app.ApplicationServices);
-    }
-  }
+			SampleData.Initialize(app.ApplicationServices);
+		}
+	}
 }
