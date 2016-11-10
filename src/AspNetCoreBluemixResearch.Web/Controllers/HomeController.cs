@@ -91,8 +91,7 @@ namespace AspNetCoreBluemixResearch.Web.Controllers
 
 			return RedirectToAction("Index");
 		}
-
-		[ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+		
 		[HttpGet]
 		[ActionName("Delete")]
 		public async Task<IActionResult> ConfirmDelete(int? id)
