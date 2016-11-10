@@ -25,12 +25,12 @@ namespace AspNetCoreBluemixResearch.Web
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
-			//string connection = Configuration.GetConnectionString("MySQLConnection");
-			string connection = Configuration.GetConnectionString("PostgreSQLConnection");
+			string connection = Configuration.GetConnectionString("MySQLConnection");
+			//string connection = Configuration.GetConnectionString("PostgreSQLConnection");
 
 			services.AddDbContext<MobileContext>(options =>
-				//options.UseMySQL(connection));
-				options.UseNpgsql(connection));
+				options.UseMySQL(connection));
+				//options.UseNpgsql(connection));
 
 			// Add framework services.
 			services.AddMvc();
