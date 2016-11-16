@@ -4,7 +4,7 @@
 
 <h2>Make your order</h2>
 
-<form method="post" class="form-horizontal" role="form">
+<form asp-action="Buy" asp-controller="Home" method="post" class="form-horizontal">
     <input type="hidden" value="@ViewBag.PhoneId" name="PhoneId" />
     <p>Fill the following information about yourself:</p>
     <div class="form-group">

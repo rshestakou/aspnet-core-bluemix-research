@@ -14,7 +14,7 @@
         <tr>
             <td>@phone.Name</td>
             <td>@phone.Price</td>
-            <td><a href="~/Home/Buy/@phone.Id">Buy</a></td>
+            <td><a asp-action="Buy" asp-controller="Home" asp-route-id="@phone.Id">Buy</a></td>
             <td>
                 <a asp-action="Details" asp-controller="Home" asp-route-id="@phone.Id">Details</a> |
                 <a asp-action="Edit" asp-controller="Home" asp-route-id="@phone.Id">Edit</a> |
@@ -24,4 +24,4 @@
     }
 </table>
 <br />
-<a href="~/Home/Create">Add phone</a>
+<a asp-action="Create" asp-controller="Home">Add phone</a>
