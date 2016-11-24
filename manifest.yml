@@ -6,3 +6,4 @@ applications:
   name: ASP.NET Core Bluemix Research
   host: aspnet-core-bluemix-research
   disk_quota: 1024M
+  path: src/AspNetCoreBluemixResearch.Web/bin/Release/PublishOutput

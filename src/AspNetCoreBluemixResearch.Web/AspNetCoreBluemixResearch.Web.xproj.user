@@ -3,6 +3,7 @@
   <PropertyGroup>
     <ActiveDebugProfile>AspNetCoreBluemixResearch.Web</ActiveDebugProfile>
     <ActiveDebugFramework>netcoreapp1.0</ActiveDebugFramework>
+    <NameOfLastUsedPublishProfile>Bluemix</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>

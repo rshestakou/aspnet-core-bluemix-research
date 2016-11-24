@@ -1,8 +1,10 @@
-﻿################################################################################
-# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
-################################################################################
+﻿# Allow folder PublishOutput
+!src/AspNetCoreBluemixResearch.Web/bin/
+src/AspNetCoreBluemixResearch.Web/bin/*
+!src/AspNetCoreBluemixResearch.Web/bin/Release/
+src/AspNetCoreBluemixResearch.Web/bin/Release/*
+!src/AspNetCoreBluemixResearch.Web/bin/Release/PublishOutput/
 
-/src/AspNetCoreBluemixResearch.Web/bin
 /src/AspNetCoreBluemixResearch.Web/obj
 /.vs/AspNetCoreBluemixResearch/v14
 /.vs

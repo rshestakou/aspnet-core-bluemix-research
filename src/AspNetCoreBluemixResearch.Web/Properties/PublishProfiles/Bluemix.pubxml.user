@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Work\IBM\jStart\dotnet-research\AspNetCoreBluemixResearch\src\AspNetCoreBluemixResearch.Web\.\bin\Release\PublishOutput</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="ExternalSQLServerConnection">
+      <Value>
+      </Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="MySQLConnection">
+      <Value>server=us-cdbr-iron-east-04.cleardb.net;userid=bda44adfbbd249;pwd=48c6bbbd;port=3306;database=ad_e92f2005d7f79e8;sslmode=none;</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="PostgreSQLConnection">
+      <Value>User ID=ielkjluo;Password=hTxlQsmTs8BVvnsf9kK65JTBk9wg1O_L;Host=jumbo.db.elephantsql.com;Port=5432;Database=ielkjluo;Pooling=false;</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="SQLiteConnection">
+      <Value>Data Source=./mydb.sqlite;</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
