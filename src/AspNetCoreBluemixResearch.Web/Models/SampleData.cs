@@ -9,9 +9,9 @@ namespace AspNetCoreBluemixResearch.Web.Models
 	/// </summary>
 	public static class SampleData
 	{
-		public static void Initialize(IServiceProvider serviceProvider)
+		public static void Initialize(MobileContext context)
 		{
-			using (var context = serviceProvider.GetService<MobileContext>())
+			using (context)
 			{
 				context.Database.EnsureCreated();
 

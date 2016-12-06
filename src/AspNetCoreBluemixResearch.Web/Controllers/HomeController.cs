@@ -1,7 +1,9 @@
-﻿using AspNetCoreBluemixResearch.Web.Models;
+﻿using System;
+using AspNetCoreBluemixResearch.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace AspNetCoreBluemixResearch.Web.Controllers
 {
@@ -11,12 +13,20 @@ namespace AspNetCoreBluemixResearch.Web.Controllers
 
 		public HomeController(MobileContext context)
 		{
-			db = context;
+			if (context.ProviderSpecified)
+			{
+				db = context;
+			}
 		}
 
-		public async Task<IActionResult> Index()
+		public IActionResult Index()
 		{
-			return View(await db.Phones.ToListAsync());
+			if (db != null)
+			{
+				return View(db.Phones.ToList());
+			}
+
+			return RedirectToAction("Index", "Setup");
 		}
 
 		public IActionResult Create()
