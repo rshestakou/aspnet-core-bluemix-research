@@ -2,7 +2,7 @@ applications:
 - path: .
   memory: 1024M
   instances: 1
-  domain: mybluemix.net
+  domain: eu-gb.mybluemix.net
   name: ASP.NET Core Bluemix Research
   host: aspnet-core-bluemix-research
   disk_quota: 1024M

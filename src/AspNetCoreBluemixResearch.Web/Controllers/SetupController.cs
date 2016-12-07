@@ -15,7 +15,7 @@ namespace AspNetCoreBluemixResearch.Web.Controllers
 		{
 			_configuration = configuration;
 		}
-		
+
 		public IActionResult Index()
 		{
 			var viewModel = new ConnectionsViewModel

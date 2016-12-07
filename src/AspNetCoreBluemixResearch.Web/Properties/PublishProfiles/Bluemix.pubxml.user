@@ -8,18 +8,4 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>D:\Work\IBM\jStart\dotnet-research\AspNetCoreBluemixResearch\src\AspNetCoreBluemixResearch.Web\.\bin\Release\PublishOutput</_PublishTargetUrl>
   </PropertyGroup>
-  <ItemGroup>
-    <DestinationConnectionStrings Include="ExternalSQLServerConnection">
-      <Value>Data Source=mysqlforbx6764.cloudapp.net,1437;Initial Catalog=dotnet_research;Integrated Security=False;User ID=rshestakou;Password=Zk.,k.pf,sdfnmgfhjkb;MultipleActiveResultSets=True</Value>
-    </DestinationConnectionStrings>
-    <DestinationConnectionStrings Include="MySQLConnection">
-      <Value>server=us-cdbr-iron-east-04.cleardb.net;userid=bda44adfbbd249;pwd=48c6bbbd;port=3306;database=ad_e92f2005d7f79e8;sslmode=none;</Value>
-    </DestinationConnectionStrings>
-    <DestinationConnectionStrings Include="PostgreSQLConnection">
-      <Value>User ID=ielkjluo;Password=hTxlQsmTs8BVvnsf9kK65JTBk9wg1O_L;Host=jumbo.db.elephantsql.com;Port=5432;Database=ielkjluo;Pooling=false;</Value>
-    </DestinationConnectionStrings>
-    <DestinationConnectionStrings Include="SQLiteConnection">
-      <Value>Data Source=./mydb.sqlite;</Value>
-    </DestinationConnectionStrings>
-  </ItemGroup>
 </Project>
