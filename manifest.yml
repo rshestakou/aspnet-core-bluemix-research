@@ -7,3 +7,5 @@ applications:
   host: aspnet-core-bluemix-research
   disk_quota: 1024M
   path: src/AspNetCoreBluemixResearch.Web/bin/Release/PublishOutput
+  env:
+    CACHE_NUGET_PACKAGES: false
