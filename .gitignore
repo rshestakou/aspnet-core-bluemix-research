@@ -8,3 +8,4 @@ src/AspNetCoreBluemixResearch.Web/bin/Release/*
 /src/AspNetCoreBluemixResearch.Web/obj
 /.vs/AspNetCoreBluemixResearch/v14
 /.vs
+*.user
