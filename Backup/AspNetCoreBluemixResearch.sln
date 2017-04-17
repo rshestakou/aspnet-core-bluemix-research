@@ -1,16 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{ACBF9B31-0346-4B17-ADEC-025E4AD6B5B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{081D319B-B603-404A-80C2-4BD3C45196D9}"
 	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
 		manifest.yml = manifest.yml
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreBluemixResearch.Web", "src\AspNetCoreBluemixResearch.Web\AspNetCoreBluemixResearch.Web.csproj", "{392B6DB6-0C02-407C-A2DA-A01859B1AA91}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AspNetCoreBluemixResearch.Web", "src\AspNetCoreBluemixResearch.Web\AspNetCoreBluemixResearch.Web.xproj", "{392B6DB6-0C02-407C-A2DA-A01859B1AA91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
